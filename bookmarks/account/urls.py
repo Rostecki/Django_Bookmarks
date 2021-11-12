@@ -22,6 +22,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     # można tylko jedną ścieżkę zamiast 6 powyżej
     # path('', include('django.contrib.auth.urls'))
-    path('register/', views.register, name='register')
+    path('register/', views.register, name='register'),
+    path('edit/', views.edit, name='edit'),
     
 ]

@@ -5,13 +5,13 @@ from .models import Profile
 
 
 class LoginForm(forms.Form):
-    username = forms.CharField()
+    username = forms.CharField(label='Podaj nazwę użytkownika lub email')
     password = forms.CharField(widget=forms.PasswordInput)
     
 
 class UserRegistrationForm(forms.ModelForm):
     password = forms.CharField(label='Hasło', widget=forms.PasswordInput)    
-    password2 = forms.CharField(label='Powtórz hasło', widget=forms.PasswordInput)
+    password2 = forms.CharField(label='Powtórz hasło!', widget=forms.PasswordInput)
     
     class Meta:
         model = User
@@ -23,15 +23,15 @@ class UserRegistrationForm(forms.ModelForm):
             raise forms.ValidationError('Hasła nie sa identyczne.')
         return cd['password2']
     
-class UserEdit(forms.ModelForm):
+class UserEditForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ('first_name', 'last_name', 'email')
         
 
-class ProfileEditForm(forms.ModelForm)
+class ProfileEditForm(forms.ModelForm):
     class Meta:
         model = Profile
-        fields = ('date_of_birth', 'photo')
+        fields = ('data_urodzenia', 'zdjęcie')
         
         

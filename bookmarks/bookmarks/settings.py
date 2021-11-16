@@ -51,6 +51,7 @@ AUTHENTICATION_BACKENDS = ['django.contrib.auth.backends.ModelBackend',
 INSTALLED_APPS = [
     # Dodane moje aplikacje
     'account.apps.AccountConfig',
+    'images.apps.ImagesConfig',
     'social_django',
     'django_extensions',
     
